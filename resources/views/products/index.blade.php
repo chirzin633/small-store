@@ -14,12 +14,17 @@
         <div class="grid grid-cols-1 gap-6 mt-5 md:grid-cols-3">
             @foreach ($products as $product)
                 <div>
-                    <img src="{{ url('storage/' . $product->image ) }}" alt="{{ $product->image }}" />
+                    <img
+                        class="object-cover w-full h-48 rounded-lg"
+                        src="{{ asset('storage/' . $product->image ) }}"
+                        alt="{{ $product->name }}" />
                     <div class="my-2">
                         <p class="font-light">{{ $product->name }}</p>
                         <p class="font-semibold text-gray-500">Rp.{{ number_format($product->price) }}</p>
                     </div>
-                    <button class="w-full px-10 py-2 font-semibold bg-yellow-300 rounded-md">Edit</button>
+                    <a href="{{ route('products.edit', $product) }}">
+                        <button class="w-full px-10 py-2 font-semibold bg-yellow-300 rounded-md">Edit</button>
+                    </a>
                 </div>
             @endforeach
         </div>
