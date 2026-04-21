@@ -15,7 +15,7 @@
             @foreach ($products as $product)
                 <div>
                     <img
-                        class="object-cover w-full h-48 rounded-lg"
+                        class="object-cover w-full h-64 rounded-lg"
                         src="{{ asset('storage/' . $product->image ) }}"
                         alt="{{ $product->name }}" />
                     <div class="my-2">
@@ -29,6 +29,6 @@
             @endforeach
         </div>
 
-        <div class="mt-5">{{ $products->links() }}</div>
+        <div class="mt-10">{{ $products->links() }}</div>
     </div>
 </x-app-layout>
